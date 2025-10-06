@@ -1,0 +1,10 @@
+- name: "Gopi krishna"
+  age: 26
+  city: "Bangalore"
+  address:
+    street: "Machilipatname"
+    pincode: 521001
+  skills:
+    - java
+    - python
+    - ansible
