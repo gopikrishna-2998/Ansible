@@ -5,6 +5,6 @@
   - name: print the items
     ansible.builtin.dnf:
       name: "item is {{ item.name }}"
-      state: present
+      state: "state is {{ item.state }}"
     loop:
-      - { name: nginx , state: present }
+    - { name: "nginx" , state: "present" }
