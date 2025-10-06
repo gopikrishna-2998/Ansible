@@ -1,0 +1,22 @@
+- name: data types
+  hosts: localhost
+  connection: local
+  vars:
+    course: Devsecops
+    duration: 5
+    rating: 4.5
+    free: true
+    topics:
+      - ansible
+      - docker
+      - kubernetes
+      - terraform
+    details:
+      name: Devsecops 
+      duration: 5 days
+      trainer: Gopi
+  tasks:
+  - name: print the variables 
+    ansible.builtin.debug:
+      msg: course: {{ course }}, duration: {{ duration }}, rating: {{ rating }}, free: {{ free }}, topics: {{ topics }}, details: {{ details }}
+        
