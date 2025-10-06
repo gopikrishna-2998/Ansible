@@ -7,4 +7,4 @@
       name: "item is {{ item.name }}"
       state: "state is {{ item.state }}"
     loop:
-    - { name: "nginx" , state: "present" }
+    - { name: "nginx" , state: "latest" }
