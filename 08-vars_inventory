@@ -1,7 +1,7 @@
 - name: vars promt
   hosts: local
   connection: local
- tasks:
+  tasks:
   - name: print the username
     ansible.builtin.debug:
       msg: "your name is {{ name }}, your password is {{ password }}"
