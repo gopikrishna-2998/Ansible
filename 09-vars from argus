@@ -1,7 +1,7 @@
-- name: vars from inventory
+- name: vars from arugs
   hosts: local
   connection: local
   tasks:
-  - name: print the username  
+  - name: course details  
     ansible.builtin.debug:
       msg: "your name is {{ name }}, duration is {{ duration }}, trainer is {{ trainer }}"
