@@ -3,9 +3,9 @@
   connection: local
   vars_prompt:
   - name: username
-    promt: enter your username
-    private: false
+    promt: "Enter your name"
+    private: no
   tasks:
   - name: print the username
     ansible.builtin.debug:
-      msg: "your username is {{ username }}"
+      msg: "your name is {{ username }}"
