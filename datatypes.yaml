@@ -18,5 +18,5 @@
   tasks:
   - name: print the variables 
     ansible.builtin.debug:
-      msg: course: {{ course }}, duration: {{ duration }}, rating: {{ rating }}, free: {{ free }}, topics: {{ topics }}, details: {{ details }}
+      msg: "course: {{ course }}, duration: {{ duration }}, rating: {{ rating }}, free: {{ free }}, topics: {{ topics }}, details: {{ details }}"
         
