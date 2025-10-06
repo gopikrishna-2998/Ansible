@@ -1,10 +1,11 @@
 - name: loop
   hosts: local
   connection: local
+  become: yes
   tasks:
   - name: print the items
     ansible.builtin.dnf:
       name: "item is {{ item.name }}"
       state: "state is {{ item.state }}"
     loop:
-    - { name: "nginx" , state: "latest" }
+    - { name: "nginx", state: "latest" }
