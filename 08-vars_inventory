@@ -2,6 +2,6 @@
   hosts: local
   connection: local
   tasks:
-  - name: print the username
+  - name: print the username  
     ansible.builtin.debug:
-      msg: "your name is {{ name }}, your password is {{ password }}"
+      msg: "your name is {{ name }}, duration is {{ duration }}, trainer is {{ trainer }}"
