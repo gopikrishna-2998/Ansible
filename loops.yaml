@@ -1,0 +1,9 @@
+- name: loop
+  hosts: local
+  connection: local
+  tasks:
+  - name: print the items
+    ansible.builtin.dnf:
+      msg: "item is {{ item }}"
+    loop:
+      - zip
