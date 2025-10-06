@@ -5,7 +5,10 @@
     - name: "name"
       prompt: "Enter the course name"
       private: no
+    - name: password
+      prompt: "Enter the password"
+      private: yes
   tasks:
   - name: print the username
     ansible.builtin.debug:
-      msg: "your name is {{ name }}"
+      msg: "your name is {{ name }}, your password is {{ password }}"
