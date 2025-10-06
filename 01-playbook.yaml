@@ -1,5 +1,5 @@
 - name: ping the server
-  hosts: cart
+  hosts: all
   tasks:
   - name: ping
     ansible.builtin.ping:
