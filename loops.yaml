@@ -6,4 +6,4 @@
     ansible.builtin.dnf:
       msg: "item is {{ item }}"
     loop:
-      - zip
+      - httpd
