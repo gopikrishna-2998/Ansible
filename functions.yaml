@@ -8,9 +8,11 @@
       Appilcation: Ansible
       Environment: Devops
     listtomap:
-      - name: gopi
-      - duration: 5 days
-      - trainer: Gopi
+    - key: Name
+      value: Gopi
+    - key: Location
+      value: India
+      
   tasks:
   - name: print the items
     ansible.builtin.debug:
