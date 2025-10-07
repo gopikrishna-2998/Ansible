@@ -3,7 +3,7 @@
   connection: local
   vars:
     ami: 09c813fb71547fc4f
-    sg_id: sgr-0733da2939e6bc02a
+    sg_id: sg-017681bac367675c7
     zone_id: "Z0379910K30ZWY5SALMW"
     domain_name: "gopi29.fun"
     instances:
