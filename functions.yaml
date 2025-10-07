@@ -1,0 +1,7 @@
+- name: function
+  hosts: local
+  connection: local
+  tasks:
+  - name: variables
+    ansibile.builtin.debug:
+      msg: "the name is {{ name | default('Gopinath') }}"
