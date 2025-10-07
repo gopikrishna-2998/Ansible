@@ -52,3 +52,12 @@
   - name: print shell output
     ansible.builtin.debug:
       msg: "{{ shell_output }}"
+
+  # command
+  - name: command
+    ansible.builtin.command: ls -ltr
+    register: command_output
+
+  - name: print command output
+    ansible.builtin.debug:
+      msg: "{{ command_output }}"
