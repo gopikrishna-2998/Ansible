@@ -1,0 +1,13 @@
+- name: error handling
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: id roboshop
+    ansible.builtin.command: id roboshop
+    register: result
+    ignore_errors: yes
+
+  - name: print the result
+    ansible.builtin.debug:
+      msg: "{{ result }}"
