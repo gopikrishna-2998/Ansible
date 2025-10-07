@@ -1,7 +1,13 @@
 - name: function
   hosts: local
   connection: local
+  vars:
+    technology: ansible, devops, aws, linux
   tasks:
   - name: print the items
     ansible.builtin.debug:
       msg: "the name is {{ name | default('gopi') }}"
+
+  - name: print string to list
+    ansible.builtin.debug:
+      msg: "{{ technology | split(',') }}"
