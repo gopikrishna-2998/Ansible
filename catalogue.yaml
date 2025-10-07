@@ -56,15 +56,17 @@
       name: mongodb-mongosh
       state: present
 
-  # - name: connect to mongodb catalogue
-  #   ansible.builtin.command: mongosh mongodb.gopi29.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+  - name: connect to mongodb catalogue
+    ansible.builtin.command: mongosh mongodb.gopi29.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+    register: catalogue_output
+
+  # - name: evaluate catalogue db
+  #   ansible.builtin.shell:
+  #     login_host: mongodb.gopi29.fun
+  #     eval: db.getMongo().getDBNames().indexOf('catalogue')
   #   register: catalogue_output
 
-  - name: evaluate catalogue db
-    ansible.builtin.shell:
-      login_host: mongodb.gopi29.fun
-      eval: db.getMongo().getDBNames().indexOf('catalogue')
-    register: catalogue_output
+  # above shell not working so commented
 
   - name: print catalogue output
     ansible.builtin.debug:
