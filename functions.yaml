@@ -3,6 +3,10 @@
   connection: local
   vars:
     technology: ansible, devops, aws, linux
+    #map == dict
+  tags:
+    Appilcation: Ansible
+    Environment: Devops
   tasks:
   - name: print the items
     ansible.builtin.debug:
@@ -11,3 +15,7 @@
   - name: print string to list
     ansible.builtin.debug:
       msg: "{{ technology | split(',') }}"
+
+  - name: map to list
+    ansible.builtin.debug:
+      msg: "{{ tags | dict2items }}" 
