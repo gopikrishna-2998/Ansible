@@ -62,6 +62,7 @@
 
   - name: evaluate catalogue db
     ansible.builtin.shell:
+      login_host: mongodb.gopi29.fun
       eval: db.getMongo().getDBNames().indexOf('catalogue')
     register: catalogue_output
 
