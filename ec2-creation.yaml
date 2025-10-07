@@ -17,7 +17,7 @@
       sg_id: "{{ sg_id }}"
       tags:
         name: "{{ item }}"
-    loop: {{ instances }}
+    loop: "{{ instances }}"
     register: ec2_output
 
   - name: print the output
