@@ -44,3 +44,11 @@
   - name: valid ip or not
     ansible.builtin.debug:
       msg: "{{ ip | ansible.utils.ipv4}}"
+
+  # shell and command
+  - name: shell
+    ansible.builtin.shell: cat /etc/passwd | grep root    
+    register: shell_output
+  - name: print shell output
+    ansible.builtin.debug:
+      msg: "{{ shell_output }}"
