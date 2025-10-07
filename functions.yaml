@@ -7,15 +7,23 @@
     tags:
       Appilcation: Ansible
       Environment: Devops
+    listtomap:
+      - name: gopi
+      - duration: 5 days
+      - trainer: Gopi
   tasks:
   - name: print the items
     ansible.builtin.debug:
       msg: "the name is {{ name | default('gopi') }}"
-
+# string to list
   - name: print string to list
     ansible.builtin.debug:
       msg: "{{ technology | split(',') }}"
-
+# map to list
   - name: map to list
     ansible.builtin.debug:
       msg: "{{ tags | dict2items }}" 
+# list to map
+  - name: list to map
+    ansible.builtin.debug:
+      msg: "{{ listtomap | items2dict }}"
