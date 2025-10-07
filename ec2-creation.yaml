@@ -1,5 +1,5 @@
 - name: ec2 creation
-  hosts: localhost
+  hosts: local
   connection: local
   vars:
     ami: 09c813fb71547fc4f
