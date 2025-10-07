@@ -1,16 +1,16 @@
-- name: ec2 creation
+- name: ec2 
   hosts: local
   connection: local
   vars:
     ami: 09c813fb71547fc4f
     sg_id: 017681bac367675c7
-    zone_id: "Z0379910K30ZWY5SALMW"
-    domain_name: "gopi29.fun"
+    zone_id: Z0379910K30ZWY5SALMW
+    domain_name: gopi29.fun
     instances:
     - mongodb
   tasks:
   - name: create ec2 instance
-    amazon.aws.ec2:
+    amazon.aws.ec2_instance:
       name: "{{ item }}"
       instance_type: t3.micro
       image_id: "{{ ami }}"
