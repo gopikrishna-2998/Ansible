@@ -4,9 +4,9 @@
   vars:
     technology: ansible, devops, aws, linux
     #map == dict
-  tags:
-    Appilcation: Ansible
-    Environment: Devops
+    tags:
+      Appilcation: Ansible
+      Environment: Devops
   tasks:
   - name: print the items
     ansible.builtin.debug:
