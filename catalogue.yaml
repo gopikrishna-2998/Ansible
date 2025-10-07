@@ -68,8 +68,12 @@
 
   # above shell not working so commented
 
-  - name: print catalogue output
-    ansible.builtin.debug:
-      msg: "print output {{ catalogue_output }}"
+  # - name: print catalogue output
+  #   ansible.builtin.debug:
+  #     msg: "print output {{ catalogue_output }}"
+
+  - name: load products into mongodb
+    ansible.builtin.shell: mongosh --host MONGODB-SERVER-IPADDRESS </app/db/master-data.js
+    when: catalogue_output.stdout < 0
       
       

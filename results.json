@@ -1,0 +1,2 @@
+{'changed': True, 'stdout': '-1', 'stderr': '', 'rc': 0, 'cmd': ['mongosh', 'mongodb.gopi29.fun', '--quiet', '--eval', \"db.getMongo().getDBNames().indexOf('catalogue')\"], 'start': '2025-10-07 16:35:33.567343', 'end': '2025-10-07 16:35:34.699837', 'delta': '0:00:01.132494', 'msg': '', 'stdout_lines': ['-1'], 'stderr_lines': [], 'failed': False}"
+}
