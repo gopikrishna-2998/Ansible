@@ -3,6 +3,9 @@
   connection: local
   vars:
     technology: ansible, devops, aws, linux
+    name: "gopi"
+    email: "chanti@GMAIL.COM"
+    ip: "192.151.0.1"
     #map == dict
     tags:
       Appilcation: Ansible
@@ -29,3 +32,15 @@
   - name: list to map
     ansible.builtin.debug:
       msg: "{{ listtomap | items2dict }}"
+# upper case
+  - name: upper case
+    ansible.builtin.debug:
+      msg: "{{ name | upper }}"
+# lower case
+  - name: lower case
+    ansible.builtin.debug:
+      msg: "{{ email | lower }}"
+  # valid ip or not
+  - name: valid ip or not
+    ansible.builtin.debug:
+      msg: "{{ ip | ansible.utils.ipv4}}"
