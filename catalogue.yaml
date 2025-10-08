@@ -21,10 +21,21 @@
       system: true
       home: /app
 
+# safe to remove and create again
+  - name: remove app directory
+    ansible.builtin.file:
+      path: /app
+      state: absent
+
   - name: create application directory
     ansible.builtin.file:
       state: directory
       path: /app
+
+  - name: remove catalogue file
+    ansible.builtin.file:
+      path: /tmp/catalogue.zip
+      state: absent
 
   - name: download catalogue code
     ansible.builtin.get_url:
@@ -76,10 +87,15 @@
     ansible.builtin.shell: mongosh --host mongodb.gopi29.fun </app/db/master-data.js
     when: catalogue_output.stdout | int < 0
 
+  # - name: start catalogue service
+  #   ansible.builtin.service:
+  #     name: catalogue
+  #     state: restarted
+  #     enabled: yes
+      
   - name: start catalogue service
-    ansible.builtin.service:
+    ansible.builtin.systemd_service:
       name: catalogue
       state: restarted
       enabled: yes
-      
-      
+      daemon_reload: true
