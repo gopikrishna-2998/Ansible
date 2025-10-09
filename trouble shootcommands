@@ -1,0 +1,8 @@
+nslookup check for route53 sucess or not 
+nslookup mongodb.gopi29.fun
+ two check connection btw other server
+telnet mongodb.gopi29.fun port number
+to check port numbers
+netstat -lntp
+helth check 
+curl http://cart.gopi29.fun:8080/health
