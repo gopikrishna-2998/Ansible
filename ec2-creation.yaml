@@ -52,17 +52,17 @@
     loop: "{{ ec2_output.results }}"
 
 # we create route53 record for frontend to public ip
-  - name: create route53 record for frontend
-    amazon.aws.route53:
-      state: present
-      zone: "{{ domain_name }}"
-      record: "{{ domain_name }}" #gopi29.fun
-      type: A
-      ttl: 1
-      value: "{{ item.instances[0].public_ip_address }}" 
-      overwrite: true
-      when: item.item == "frontend"
-    loop: "{{ ec2_output.results }}"
+  # - name: create route53 record for frontend
+  #   amazon.aws.route53:
+  #     state: present
+  #     zone: "{{ domain_name }}"
+  #     record: "{{ domain_name }}" #gopi29.fun
+  #     type: A
+  #     ttl: 1
+  #     value: "{{ item.instances[0].public_ip_address }}" 
+  #     overwrite: true
+  #     when: item.item == "frontend"
+  #   loop: "{{ ec2_output.results }}"
 
     # excute this playbook with this command
     #ansible-playbook -i inventory.ini ec2-creation.yaml -e "instances=['mongodb','mysql','redis','rabbitmq','user','cart','catalogue','shipping','payment']"
