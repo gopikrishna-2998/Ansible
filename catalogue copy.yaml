@@ -90,6 +90,38 @@
   #     enabled: yes
   #     state: started
 
+  - name: show db
+    ansible.builtin.command: show dbs
+    register: dbs_output
+
+  - name: print dbs output
+    ansible.builtin.debug:
+      msg: "{{ dbs_output.stdout }}"
+
+  - name: use catalogue
+    ansible.builtin.command: use catalogue
+    register: use_output
+
+  - name: print use output
+    ansible.builtin.debug:
+      msg: "{{ use_output.stdout }}"
+
+  - name: show collections
+    ansible.builtin.command: show collections
+    register: collections_output
+
+  - name: print collections output
+    ansible.builtin.debug:
+      msg: "{{ collections_output.stdout }}"
+
+  - name: show products
+    ansible.builtin.command: db.products.find()
+    register: products_output
+
+  - name: print products output
+    ansible.builtin.debug:
+      msg: "{{ products_output.stdout }}" 
+
   - name: daemon reload enable and start
     ansible.builtin.systemd_service:
       name: catalogue
